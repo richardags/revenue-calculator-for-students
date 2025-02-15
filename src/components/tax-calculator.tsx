@@ -162,7 +162,7 @@ export default function TaxCalculator() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <h4 className="font-medium">{job1.name || "Job 1"}</h4>
+                <h4 className="font-medium">{job1.name || "Primary Employment"}</h4>
                 <div className="grid grid-cols-2 gap-2 text-sm">
                   <span>Annual Income:</span>
                   <span className="font-semibold">{formatCurrency(job1.annualIncome)}</span>
@@ -171,7 +171,7 @@ export default function TaxCalculator() {
                 </div>
               </div>
               <div className="space-y-2">
-                <h4 className="font-medium">{job2.name || "Job 2"}</h4>
+                <h4 className="font-medium">{job2.name || "Secondary Employment"}</h4>
                 <div className="grid grid-cols-2 gap-2 text-sm">
                   <span>Annual Income:</span>
                   <span className="font-semibold">{formatCurrency(job2.annualIncome)}</span>
