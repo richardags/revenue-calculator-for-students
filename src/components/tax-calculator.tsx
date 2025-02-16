@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Calculator } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { NumericFormat } from "react-number-format"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
@@ -92,26 +93,34 @@ export default function TaxCalculator() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="job1-rate">Pay Rate per Hour (€)</Label>
-                <Input
-                  id="job1-rate"
-                  type="number"
-                  min="0"
-                  step="0.01"
-                  value={job1.payRate || ""}
-                  onChange={(e) => setJob1({ ...job1, payRate: Number.parseFloat(e.target.value) || 0 })}
+                <NumericFormat
+                  id="job1-rate"                  
+                  className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  inputMode="decimal"
+                  value={job1.payRate || ""}                  
+                  onValueChange={(e) => setJob1({ ...job1, payRate: e.floatValue || 0 })}
                   placeholder="0.00"
+                  thousandSeparator={false}
+                  decimalSeparator="."
+                  allowNegative={false}
+                  decimalScale={2}
+                  fixedDecimalScale={true}
                 />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="job1-hours">Hours per Week</Label>
-                <Input
-                  id="job1-hours"
-                  type="number"
-                  min="0"
-                  step="0.5"
-                  value={job1.hoursPerWeek || ""}
-                  onChange={(e) => setJob1({ ...job1, hoursPerWeek: Number.parseFloat(e.target.value) || 0 })}
-                  placeholder="0"
+                <NumericFormat
+                  id="job1-hours"                  
+                  className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  inputMode="decimal"
+                  value={job1.hoursPerWeek || ""}                  
+                  onValueChange={(e) => setJob1({ ...job1, hoursPerWeek: e.floatValue || 0 })}
+                  placeholder="0.00"
+                  thousandSeparator={false}
+                  decimalSeparator="."
+                  allowNegative={false}
+                  decimalScale={2}
+                  fixedDecimalScale={true}
                 />
               </div>
             </div>
@@ -130,26 +139,34 @@ export default function TaxCalculator() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="job2-rate">Pay Rate per Hour (€)</Label>
-                <Input
-                  id="job2-rate"
-                  type="number"
-                  min="0"
-                  step="0.01"
-                  value={job2.payRate || ""}
-                  onChange={(e) => setJob2({ ...job2, payRate: Number.parseFloat(e.target.value) || 0 })}
+                <NumericFormat
+                  id="job2-rate"                  
+                  className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  inputMode="decimal"
+                  value={job2.payRate || ""}                  
+                  onValueChange={(e) => setJob2({ ...job2, payRate: e.floatValue || 0 })}
                   placeholder="0.00"
+                  thousandSeparator={false}
+                  decimalSeparator="."
+                  allowNegative={false}
+                  decimalScale={2}
+                  fixedDecimalScale={true}
                 />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="job2-hours">Hours per Week</Label>
-                <Input
-                  id="job2-hours"
-                  type="number"
-                  min="0"
-                  step="0.5"
-                  value={job2.hoursPerWeek || ""}
-                  onChange={(e) => setJob2({ ...job2, hoursPerWeek: Number.parseFloat(e.target.value) || 0 })}
-                  placeholder="0"
+                <NumericFormat
+                  id="job2-hours"                  
+                  className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  inputMode="decimal"
+                  value={job2.hoursPerWeek || ""}                  
+                  onValueChange={(e) => setJob2({ ...job2, hoursPerWeek: e.floatValue || 0 })}
+                  placeholder="0.00"
+                  thousandSeparator={false}
+                  decimalSeparator="."
+                  allowNegative={false}
+                  decimalScale={2}
+                  fixedDecimalScale={true}
                 />
               </div>
             </div>
